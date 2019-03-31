@@ -1,0 +1,234 @@
+
+// Mobile Styles
+@media only screen and (max-width: 400px) {
+    .grid__item,
+    .sidebar__item{
+        width: 100%;
+    }
+    
+    .seemore-button{
+        width: 100%;
+    }
+}
+  
+// Tablet Styles
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .grid__item,
+    .sidebar__item{
+        width: 50%;
+    }
+}
+
+//Mobile and Table
+@media only screen and (max-width: 960px){
+    .container{
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .button{
+        font-size: 1.1em;
+        padding: .75em;
+    }
+
+    .button__video{
+        margin-top: 10px;
+    }
+
+    .hero__container{
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .hero__description,
+    .hero__image{
+        width: 100%;
+    }
+
+    .hero__center{
+        padding: 60px 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    
+    .hero__image{
+        display: none;
+    }
+
+    .wrapper-container{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    aside{
+        width: 100%;
+    }
+    
+    aside h4{
+        margin: 1em 0;
+    }
+
+    .sidebar__menu{
+        width: calc(100% + 10px);
+        padding: 0;
+        margin: -5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .sidebar__item{
+        padding: 5px;
+    }
+
+    
+    .sidebar-link-tab .sidebar__title{
+        padding-left: .3em;
+    }
+
+    .sidebar-link-tab .sidebar__item{
+        width: 50%;
+    }
+
+    .main{
+        width: 100%;
+    }
+
+    //Navbar
+    .navbar .container{
+        justify-content: space-between;
+    }
+    .navbar__collapse{
+        background: $navbar-color;
+        width: 300px;
+        height: 100%;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        z-index: 10;
+        transition: left .2s linear;
+        will-change: left;
+    }
+
+    .navbar__collapse.active{
+        left: 0;
+    }
+
+    .navbar__collapse .navbar__menu{
+        display: block;
+        margin: 0;
+    }
+
+    .navbar__collapse .navbar__item.active::after{
+        display: none;
+    }
+    
+    .navbar__collapse .input-wrapper{
+        width: 280px;
+        margin: 0 auto;
+    }
+    .navbar__collapse .input-wrapper input{
+        width: 100%;
+        padding: 1em 40px 1em 1em;
+    }
+    
+    .dimmer{
+        background: rgba(0, 0, 0, .25);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    html.active-sidenav{
+        widows: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    body[data-sidenav=true]{
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 300px;
+    }
+
+    body[data-overflow-x=false]{
+        overflow-x: hidden;
+    }
+
+    body[data-overflow-y=false]{
+        overflow-y: hidden;
+    }
+
+    body[data-sidenav=false]{
+        position: relative;
+        top: 0;
+    }
+
+    body[data-sidenav=true] .dimmer{
+        display: block;
+    }
+
+    //Footer
+    .footer .container{
+        flex-wrap: wrap;
+    }
+    
+    .footer__inner-wrapper{
+        width: 100%;
+        padding: 0;
+        margin-top: 1em;
+    }
+    
+    .footer__inner-wrapper:first-child{
+        margin: 0;
+    }
+}
+
+// Desktop Styles
+@media only screen and (min-width: 961px) and (max-width: 1214px) {
+    .container{
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    aside{
+        width: 275px;
+    }
+
+    aside{
+        padding-right: 20px;
+    }
+
+    .main{
+        width: calc(100% - 275px);
+    }
+
+    .navbar__collapse-button{
+        display: none;
+    }
+}
+  
+// Desktop Large Styles
+@media only screen and (min-width: 1215px) {
+    .container{
+        width: 1195px;
+    }
+
+    .navbar__collapse-button{
+        display: none;
+    }
+    
+    aside{
+        padding-right: 75px;
+    }
+}

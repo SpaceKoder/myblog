@@ -1,0 +1,110 @@
+@font-face{
+    font-family: mononoki;
+    src: url("/assets/fonts/mononoki/mononoki-Regular.woff");
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: $primary-color;
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    transition: left .2s linear;
+    will-change: left;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+p{
+    line-height: 1.75em;
+}
+
+.page__title{
+    color: #e8994b;
+    font-size: 1.25em;
+    margin-bottom: 1em;
+}
+
+.underlined__link{
+    height: 1.35em;
+    color: #e8994b;
+    position: relative;
+    display: inline-block;
+}
+
+.underlined__link::after{
+    content: "";
+    background: rgba(232, 153, 75, .25);
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -25%;
+    transition: height .1s ease;
+}
+
+.underlined__link:hover::after{
+    height: calc(100% + 25%);
+}
+
+span.code{
+    background: rgba(232, 153, 75, .1);
+    font-family: mononoki;
+    color: #e8994b;
+    border: 1px rgba(232, 153, 75, .1) solid;
+    border-radius: 3px;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.share-list{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.share-list li{
+    margin-left: 10px;
+}
+
+.share-list li:first-child{
+    margin: 0;
+}
+
+.share-list .facebook-button{
+    background: #475993;
+}
+
+.share-list .twitter-button{
+    background: #03a9f4;
+}
+
+.share-list .reddit-button{
+    background: #ff4500;
+}
+
+.coming-soon-container{
+    min-height: 350px;
+}
+
+.coming-soon-container h2{
+    color: #e8994b;
+    font-size: 3em;
+    text-transform: uppercase;
+    margin-bottom: .20em;
+}
+
+.coming-soon-container p{
+    font-size: 1.1em;
+}

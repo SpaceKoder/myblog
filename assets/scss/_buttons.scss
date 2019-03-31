@@ -1,0 +1,128 @@
+.button{
+    background: $primary-dark-color;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+a.button{
+    display: inline-block;
+}
+
+.button svg{
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.button .icon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    vertical-align: bottom;
+}
+
+.button .icon.facebook-icon{
+    background-image: url("/assets/images/facebook.png");
+}
+.button .icon.twitter-icon{
+    background-image: url("/assets/images/twitter.png");
+}
+.button .icon.reddit-icon{
+    background-image: url("/assets/images/reddit.png");
+}
+.button .icon.search-icon{
+    background-image: url("/assets/images/search.png");
+}
+
+.button-video-label{
+    color: #e8994b;
+    font-size: 1.15em;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button__video{
+    background: #ff2c40;
+    font-size: 1.1em;
+}
+
+.button__video .icon{
+    background-image: url("/assets/images/play-button.png");
+    margin-right: 3px;
+}
+
+.navbar__collapse-button{
+    background: transparent;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    opacity: .75;
+    transition: opacity .1s;
+}
+
+.navbar__collapse-button:hover{
+    opacity: 1;
+}
+
+.navbar__collapse-button span{
+    background: #ffffff;
+    height: 3px;
+    border-radius: 1.5px;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    right: 5px;
+}
+
+.navbar__collapse-button span::before,
+.navbar__collapse-button span::after{
+    content: "";
+    background: #ffffff;
+    width: 100%;
+    height: 3px;
+    border-radius: 1.5px;
+    position: absolute;
+    left: 0;
+}
+
+.navbar__collapse-button span::before{
+    bottom: 9px;
+}
+
+.navbar__collapse-button span::after{
+    top: 9px;
+}
+
+a.expand__link{
+    position: relative;
+}
+
+a.expand__link::after{
+    content: "";
+    background: #a8a8c1;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.button__float{
+    transform: translate(0, 0);
+    transition: transform .25s ease;
+    will-change: transform;
+}
+
+.button__float:hover{
+    transform: translate(0, -4px);
+}

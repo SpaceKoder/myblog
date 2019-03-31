@@ -1,0 +1,115 @@
+---
+layout: wrapper
+limitNum: 5
+---
+
+{% include navbar_template.html %}
+
+<div class="top-spacer top-spacer__expand"></div>
+<div class="wrapper-container container">
+    <aside>
+        {% for category in site.categories %}
+            {% if page.categories contains category[0]%}
+                {% if page.categories contains "general" %}
+                <h4 class="sidebar__title">Other Tutorials</h4>
+                {% else %}
+                <h4 class="sidebar__title">{{ page.categories }} Tutorial</h4>
+                {% endif %}
+                {% assign postList = category[1] %}
+                {% assign offset = postList.size | plus: 1 %}
+                {% assign offset = offset | minus: page.tutorial %}
+                
+                <ul class="sidebar__menu">
+                    {% for catPost in postList offset: offset limit: layout.limitNum %}
+                    <li class="sidebar__item">
+                        <a href="{{ catPost.url }}">
+                            <figure>
+                                {% if catPost.thumbnail %}
+                                <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
+                                {% else %}
+                                <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}">
+                                {% endif %}
+                                <figcaption>{{ catPost.title }}</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    {% endfor %}
+                    
+                    {% if offset >= layout.limitNum %}
+                        {% assign offset2 = offset | minus: postList.size %}
+
+                        {% for catPost in postList offset: offset2 limit: layout.limitNum %}
+                            <li class="sidebar__item">
+                                <a href="{{ catPost.url }}">
+                                    <figure>
+                                        {% if catPost.thumbnail %}
+                                        <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
+                                        {% else %}
+                                        <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}">
+                                        {% endif %}
+                                        <figcaption>{{ catPost.title }}</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {% elsif offset < layout.limitNum %}
+                        {% assign sub1 = postList.size | plus: 1 %}
+                        {% assign offset2 = offset | minus: sub1 %}
+                        
+                        {% for catPost in postList offset: offset2 limit: postList.size %}
+                            <li class="sidebar__item">
+                                <a href="{{ catPost.url }}">
+                                    <figure>
+                                        {% if catPost.thumbnail %}
+                                        <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
+                                        {% else %}
+                                        <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}">
+                                        {% endif %}
+                                        <figcaption>{{ catPost.title }}</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+
+                {% if postList.size > layout.limitNum %}
+                    <a href="#" class="aside__more button button__float">See More</a>
+                {% endif %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    </aside>
+    <div class="main" role="main">
+        <article>
+            <header>
+                <h1>{{ page.title }}</h1>
+                {% if page.description %}
+                    <p>{{ page.description }}</p>
+                {% endif %}
+                {% if page.youtube %}
+                    <label class="button-video-label">Watch the video tutorial on Youtube</label>
+                    <a href="{{ page.youtube }}" class="button button__video button__float"><span class="icon"></span> Watch Video Tutorial</a>
+                {% endif %}
+            </header>
+        </article>
+        <section>
+            <ul class="share-list">
+                <li>
+                    <button class="button facebook-button"><span class="icon facebook-icon"></span></button>
+                </li>
+                <li>
+                    <button class="button twitter-button"><span class="icon twitter-icon"></span></button>
+                </li>
+                <li>
+                    <button class="button reddit-button"><span class="icon reddit-icon"></span></button>
+                </li>
+            </ul>
+        </section>
+        <section class="section-content">
+            {{ content }}
+        </section>
+    </div>
+</div>
+
+{% include footer_template.html %}
