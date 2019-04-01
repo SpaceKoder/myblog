@@ -3,6 +3,7 @@ layout: page
 title: Search Results
 hidden: true
 permalink: /search/
+sitemap: false
 ---
 
 {% include navbar_template.html %}
