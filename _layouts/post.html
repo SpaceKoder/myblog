@@ -11,13 +11,17 @@ limitNum: 5
         {% for category in site.categories %}
             {% if page.categories contains category[0]%}
                 {% if page.categories contains "general" %}
-                <h4 class="sidebar__title">Other Tutorials</h4>
+                <h4 class="sidebar__title">Other Posts</h4>
                 {% else %}
-                <h4 class="sidebar__title">{{ page.categories }} Tutorial</h4>
+                <h4 class="sidebar__title">{{ page.categories }} Posts</h4>
                 {% endif %}
                 {% assign postList = category[1] %}
                 {% assign offset = postList.size | plus: 1 %}
                 {% assign offset = offset | minus: page.tutorial %}
+
+                {% if postList.size < 2 %}
+                    There will be more post to show. So stay tuned!
+                {% endif %}
                 
                 <ul class="sidebar__menu">
                     {% for catPost in postList offset: offset limit: layout.limitNum %}
@@ -25,7 +29,7 @@ limitNum: 5
                         <a href="{{ catPost.url }}">
                             <figure>
                                 {% if catPost.thumbnail %}
-                                <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
+                                <img src="{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
                                 {% else %}
                                 <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}">
                                 {% endif %}
@@ -43,7 +47,7 @@ limitNum: 5
                                 <a href="{{ catPost.url }}">
                                     <figure>
                                         {% if catPost.thumbnail %}
-                                        <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
+                                        <img src="{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
                                         {% else %}
                                         <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}">
                                         {% endif %}
@@ -61,7 +65,7 @@ limitNum: 5
                                 <a href="{{ catPost.url }}">
                                     <figure>
                                         {% if catPost.thumbnail %}
-                                        <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
+                                        <img src="{{ catPost.thumbnail }}" alt="{{ catPost.title }}">
                                         {% else %}
                                         <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}">
                                         {% endif %}

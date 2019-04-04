@@ -25,14 +25,14 @@ permalink: /ui-development/
 <div class="container" role="main">
 <h2 class="page__title">UI Development Tutorials</h2>
 
-{% if site.categories["ui development"].size > 0 %}
+{% if site.categories["web ui development"].size > 0 %}
 <div class="grid">
-    {% for catPost in site.categories["ui development"] limit: layout.limitNum %}
+    {% for catPost in site.categories["web ui development"] limit: layout.limitNum %}
     <div class="grid__item">
         <a href="{{ catPost.url }}" class="card-link">
             <figure class="card">
                 {% if catPost.thumbnail %}
-                <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}" class="card__image">
+                <img src="{{ catPost.thumbnail }}" alt="{{ catPost.title }}" class="card__image">
                 {% else %}
                 <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}" class="card__image">
                 {% endif %}

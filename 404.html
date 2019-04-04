@@ -12,8 +12,9 @@ layout: error
           <p>Looks like the page you're looking for, was not found. <a href="/" class="underlined__link">Go back</a> or try searching it.</p>
       </div>
   </div>
-  <div class="input-wrapper">
-      <input type="text" placeholder="Google Custom Search">
+  <form action="/search/" class="input-wrapper">
+      <input type="hidden" name="cx" value="018126283106943913233:ae54tjhcfe8">
+      <input type="text" name="q" placeholder="Google Custom Search">
       <button class="button"><span class="icon search-icon"></span></button>
-  </div>
+  </form>
 </div>

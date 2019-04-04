@@ -546,7 +546,9 @@ input[type=text] {
 }
 
 .sidebar__item figure figcaption {
+  text-align: center;
   padding: 15px;
+  border-top: 2px rgba(255, 255, 255, 0.05) solid;
 }
 
 .sidebar-link-tab .sidebar__item {
@@ -802,6 +804,7 @@ figure.card {
 .card__caption {
   text-align: center;
   padding: 15px;
+  border-top: 2px rgba(255, 255, 255, 0.05) solid;
 }
 
 .hero {
@@ -1096,6 +1099,14 @@ figure.card {
 
 .gs-result .gs-title, .gs-result .gs-title * {
   text-decoration: none !important;
+}
+
+.gs-spelling {
+  color: #ffffff !important;
+}
+
+.gs-spelling a {
+  color: #E8994B !important;
 }
 
 .seemore-button {

@@ -32,7 +32,7 @@ permalink: /tutorials/
         <a href="{{ catPost.url }}" class="card-link">
             <figure class="card">
                 {% if catPost.thumbnail %}
-                <img src="/assets/images/thumbnails/{{ catPost.thumbnail }}" alt="{{ catPost.title }}" class="card__image">
+                <img src="{{ catPost.thumbnail }}" alt="{{ catPost.title }}" class="card__image">
                 {% else %}
                 <img src="/assets/images/thumbnail-placeholder.png" alt="{{ catPost.title }}" class="card__image">
                 {% endif %}
